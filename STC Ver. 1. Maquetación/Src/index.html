@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Styles/main.css">
+</head>
+<body>
+    <div id="app" class="app-shell">
+
+        <section class="auth-page" id="authScreen">
+            <div class="auth-container">
+
+                <div class="card" id="loginCard">
+                    <form id="login">
+                        <h2 class="card-title">Bienvenido al STC</h2>
+                        <p class="card-text">Digíta tus credenciales para iniciar sesión</p>
+
+                        <div class="form-fields--login">
+
+                            <div class="form-group" id="inputEmail">
+
+                                <input type="email" id="email" class="form-input" placeholder=" ">
+                                <label for="email" class="form-label">Correo Electrónico</label>
+
+                            </div>
+                            <div class="form-group" id="inputpassword">
+
+                                <input type="password" id="password" class="form-input" placeholder=" ">
+                                <label for="password" class="form-label">Contraseña</label>
+                                <button type="button" class="input-toggle" id="togglePassword" aria-label="Mostrar contraseña">
+                                    
+                                    <svg class="icon-eye-off" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M4 4L20 20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M6.22308 5.63732C4.19212 6.89322 2.60069 8.79137 1.73175 11.0474C1.49567 11.6604 1.49567 12.3396 1.73175 12.9526C3.31889 17.0733 7.31641 20 12 20C14.422 20 16.6606 19.2173 18.4773 17.8915L17.042 16.4562C15.6033 17.4309 13.8678 18 12 18C8.17084 18 4.89784 15.6083 3.5981 12.2337C3.54022 12.0835 3.54022 11.9165 3.5981 11.7663C4.36731 9.76914 5.82766 8.11625 7.6854 7.09964L6.22308 5.63732ZM9.47955 8.89379C8.5768 9.6272 7.99997 10.7462 7.99997 12C7.99997 14.2091 9.79083 16 12 16C13.2537 16 14.3728 15.4232 15.1062 14.5204L13.6766 13.0908C13.3197 13.6382 12.7021 14 12 14C10.8954 14 9.99997 13.1046 9.99997 12C9.99997 11.2979 10.3618 10.6802 10.9091 10.3234L9.47955 8.89379ZM15.9627 12.5485L11.4515 8.03729C11.6308 8.0127 11.8139 8 12 8C14.2091 8 16 9.79086 16 12C16 12.1861 15.9873 12.3692 15.9627 12.5485ZM18.5678 15.1536C19.3538 14.3151 19.9812 13.3259 20.4018 12.2337C20.4597 12.0835 20.4597 11.9165 20.4018 11.7663C19.1021 8.39172 15.8291 6 12 6C11.2082 6 10.4402 6.10226 9.70851 6.29433L8.11855 4.70437C9.32541 4.24913 10.6335 4 12 4C16.6835 4 20.681 6.92668 22.2682 11.0474C22.5043 11.6604 22.5043 12.3396 22.2682 12.9526C21.7464 14.3074 20.964 15.5331 19.9824 16.5682L18.5678 15.1536Z" fill="currentColor"/>
+                                    </svg>
+
+                                    <svg class="icon-eye" viewBox="0 0 24 24" fill="none">
+                                    <path d="M21.335 11.4069L22.2682 11.0474L21.335 11.4069ZM21.335 12.5932L20.4018 12.2337L21.335 12.5932ZM2.66492 11.4068L1.73175 11.0474L2.66492 11.4068ZM2.66492 12.5932L1.73175 12.9526L2.66492 12.5932ZM3.5981 11.7663C4.89784 8.39171 8.17084 6 12 6V4C7.31641 4 3.31889 6.92667 1.73175 11.0474L3.5981 11.7663ZM12 6C15.8291 6 19.1021 8.39172 20.4018 11.7663L22.2682 11.0474C20.681 6.92668 16.6835 4 12 4V6ZM20.4018 12.2337C19.1021 15.6083 15.8291 18 12 18V20C16.6835 20 20.681 17.0733 22.2682 12.9526L20.4018 12.2337ZM12 18C8.17084 18 4.89784 15.6083 3.5981 12.2337L1.73175 12.9526C3.31889 17.0733 7.31641 20 12 20V18ZM20.4018 11.7663C20.4597 11.9165 20.4597 12.0835 20.4018 12.2337L22.2682 12.9526C22.5043 12.3396 22.5043 11.6604 22.2682 11.0474L20.4018 11.7663ZM1.73175 11.0474C1.49567 11.6604 1.49567 12.3396 1.73175 12.9526L3.5981 12.2337C3.54022 12.0835 3.54022 11.9165 3.5981 11.7663L1.73175 11.0474Z" fill="currentColor"/>
+                                    <circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                    
+                                </button>
+
+                            </div>
+                            
+                            <div class="form-options">
+                                <label class="form-check">
+                                    <input type="checkbox" id="recordarme">
+                                    <span>Recordarme</span>
+                                </label>
+                                <a href="#" class="link" data-goto="recoverEmail">Olvidaste tu contraseña?</a>
+                            </div>
+                        </div>
+                        
+                        <div class="form-actions">
+                            <button type="submit" class="btn btn-primary">Ingresar</button>
+                        </div>
+
+                        <p class="card-footer">
+                            No estás registrado? <a href="#" class="link" data-goto="registerCard">Crea una cuenta aquí</a>
+                        </p>
+                        
+                    </form>
+                </div>
+
+
+                <div class="card card-register" id="registerCard" hidden>
+                    <button type="button" class="card-back" data-goto="loginCard">
+                        <svg viewBox="0 0 24 24" fill="none">
+                            <path d="M20 12H4M4 12L10 6M4 12L10 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        Anterior
+                    </button>
+
+                    <h2 class="card-title">Registro de Usuario</h2>
+                    <p class="card-text">Completa los siguientes campos para crear tu cuenta</p>
+
+                    <form id="register" class="form-grid form-grid--register">
+
+                        <div class="form-group">
+                            <input type="text" id="regName" class="form-input" placeholder=" " autocomplete="name">
+                            <label for="regName" class="form-label">Nombre Completo</label>
+                        </div>
+
+                        <div class="form-group">
+                            <input type="tel" id="regPhone" class="form-input" placeholder=" " autocomplete="tel">
+                            <label for="regPhone" class="form-label">Número de Teléfono</label>
+                        </div>
+
+                        <div class="form-group">
+                            <input type="email" id="regEmail" class="form-input" placeholder=" " autocomplete="email">
+                            <label for="regEmail" class="form-label">Correo Electrónico</label>
+                        </div>
+
+                        <div class="form-group">
+                            <input type="email" id="regEmailConfirm" class="form-input" placeholder=" " autocomplete="off">
+                            <label for="regEmailConfirm" class="form-label">Confirmar Correo Electrónico</label>
+                        </div>
+
+                        <div class="form-group">
+                            <input type="password" id="regPassword" class="form-input form-input--icon" placeholder=" " autocomplete="new-password">
+                            <label for="regPassword" class="form-label">Contraseña</label>
+                            <button type="button" class="input-toggle" aria-label="Mostrar contraseña">
+                                <svg class="icon-eye-off" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M4 4L20 20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M6.22308 5.63732C4.19212 6.89322 2.60069 8.79137 1.73175 11.0474C1.49567 11.6604 1.49567 12.3396 1.73175 12.9526C3.31889 17.0733 7.31641 20 12 20C14.422 20 16.6606 19.2173 18.4773 17.8915L17.042 16.4562C15.6033 17.4309 13.8678 18 12 18C8.17084 18 4.89784 15.6083 3.5981 12.2337C3.54022 12.0835 3.54022 11.9165 3.5981 11.7663C4.36731 9.76914 5.82766 8.11625 7.6854 7.09964L6.22308 5.63732ZM9.47955 8.89379C8.5768 9.6272 7.99997 10.7462 7.99997 12C7.99997 14.2091 9.79083 16 12 16C13.2537 16 14.3728 15.4232 15.1062 14.5204L13.6766 13.0908C13.3197 13.6382 12.7021 14 12 14C10.8954 14 9.99997 13.1046 9.99997 12C9.99997 11.2979 10.3618 10.6802 10.9091 10.3234L9.47955 8.89379ZM15.9627 12.5485L11.4515 8.03729C11.6308 8.0127 11.8139 8 12 8C14.2091 8 16 9.79086 16 12C16 12.1861 15.9873 12.3692 15.9627 12.5485ZM18.5678 15.1536C19.3538 14.3151 19.9812 13.3259 20.4018 12.2337C20.4597 12.0835 20.4597 11.9165 20.4018 11.7663C19.1021 8.39172 15.8291 6 12 6C11.2082 6 10.4402 6.10226 9.70851 6.29433L8.11855 4.70437C9.32541 4.24913 10.6335 4 12 4C16.6835 4 20.681 6.92668 22.2682 11.0474C22.5043 11.6604 22.5043 12.3396 22.2682 12.9526C21.7464 14.3074 20.964 15.5331 19.9824 16.5682L18.5678 15.1536Z" fill="currentColor"/>
+                                </svg>
+
+                                <svg class="icon-eye" viewBox="0 0 24 24" fill="none">
+                                <path d="M21.335 11.4069L22.2682 11.0474L21.335 11.4069ZM21.335 12.5932L20.4018 12.2337L21.335 12.5932ZM2.66492 11.4068L1.73175 11.0474L2.66492 11.4068ZM2.66492 12.5932L1.73175 12.9526L2.66492 12.5932ZM3.5981 11.7663C4.89784 8.39171 8.17084 6 12 6V4C7.31641 4 3.31889 6.92667 1.73175 11.0474L3.5981 11.7663ZM12 6C15.8291 6 19.1021 8.39172 20.4018 11.7663L22.2682 11.0474C20.681 6.92668 16.6835 4 12 4V6ZM20.4018 12.2337C19.1021 15.6083 15.8291 18 12 18V20C16.6835 20 20.681 17.0733 22.2682 12.9526L20.4018 12.2337ZM12 18C8.17084 18 4.89784 15.6083 3.5981 12.2337L1.73175 12.9526C3.31889 17.0733 7.31641 20 12 20V18ZM20.4018 11.7663C20.4597 11.9165 20.4597 12.0835 20.4018 12.2337L22.2682 12.9526C22.5043 12.3396 22.5043 11.6604 22.2682 11.0474L20.4018 11.7663ZM1.73175 11.0474C1.49567 11.6604 1.49567 12.3396 1.73175 12.9526L3.5981 12.2337C3.54022 12.0835 3.54022 11.9165 3.5981 11.7663L1.73175 11.0474Z" fill="currentColor"/>
+                                <circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </button>
+                            <button type="button" class="input-help" aria-label="Requisitos de la contraseña"
+                                    title="Mínimo 8 caracteres, una mayúscula, un número y un carácter especial">
+                                <svg viewBox="0 0 24 24" fill="none">
+                                <path d="M9 10C9 9.40666 9.17595 8.82664 9.50559 8.33329C9.83524 7.83994 10.3038 7.45543 10.852 7.22836C11.4001 7.0013 12.0033 6.94189 12.5853 7.05765C13.1672 7.1734 13.7018 7.45912 14.1213 7.87868C14.5409 8.29824 14.8266 8.83279 14.9424 9.41473C15.0581 9.99667 14.9987 10.5999 14.7716 11.1481C14.5446 11.6962 14.1601 12.1648 13.6667 12.4944C13.1734 12.8241 12.5933 13 12 13V14M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <circle cx="12" cy="17" r="1" fill="none"/>
+                                </svg>
+                                
+                            </button>
+                        </div>
+
+                        <div class="form-group">
+                            <input type="password" id="regPasswordConfirm" class="form-input form-input--icon" placeholder=" " autocomplete="new-password">
+                            <label for="regPasswordConfirm" class="form-label">Repetir Contraseña</label>
+                            <button type="button" class="input-toggle" aria-label="Mostrar contraseña">
+                                <svg class="icon-eye-off" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M4 4L20 20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M6.22308 5.63732C4.19212 6.89322 2.60069 8.79137 1.73175 11.0474C1.49567 11.6604 1.49567 12.3396 1.73175 12.9526C3.31889 17.0733 7.31641 20 12 20C14.422 20 16.6606 19.2173 18.4773 17.8915L17.042 16.4562C15.6033 17.4309 13.8678 18 12 18C8.17084 18 4.89784 15.6083 3.5981 12.2337C3.54022 12.0835 3.54022 11.9165 3.5981 11.7663C4.36731 9.76914 5.82766 8.11625 7.6854 7.09964L6.22308 5.63732ZM9.47955 8.89379C8.5768 9.6272 7.99997 10.7462 7.99997 12C7.99997 14.2091 9.79083 16 12 16C13.2537 16 14.3728 15.4232 15.1062 14.5204L13.6766 13.0908C13.3197 13.6382 12.7021 14 12 14C10.8954 14 9.99997 13.1046 9.99997 12C9.99997 11.2979 10.3618 10.6802 10.9091 10.3234L9.47955 8.89379ZM15.9627 12.5485L11.4515 8.03729C11.6308 8.0127 11.8139 8 12 8C14.2091 8 16 9.79086 16 12C16 12.1861 15.9873 12.3692 15.9627 12.5485ZM18.5678 15.1536C19.3538 14.3151 19.9812 13.3259 20.4018 12.2337C20.4597 12.0835 20.4597 11.9165 20.4018 11.7663C19.1021 8.39172 15.8291 6 12 6C11.2082 6 10.4402 6.10226 9.70851 6.29433L8.11855 4.70437C9.32541 4.24913 10.6335 4 12 4C16.6835 4 20.681 6.92668 22.2682 11.0474C22.5043 11.6604 22.5043 12.3396 22.2682 12.9526C21.7464 14.3074 20.964 15.5331 19.9824 16.5682L18.5678 15.1536Z" fill="currentColor"/>
+                                </svg>
+
+                                <svg class="icon-eye" viewBox="0 0 24 24" fill="none">
+                                <path d="M21.335 11.4069L22.2682 11.0474L21.335 11.4069ZM21.335 12.5932L20.4018 12.2337L21.335 12.5932ZM2.66492 11.4068L1.73175 11.0474L2.66492 11.4068ZM2.66492 12.5932L1.73175 12.9526L2.66492 12.5932ZM3.5981 11.7663C4.89784 8.39171 8.17084 6 12 6V4C7.31641 4 3.31889 6.92667 1.73175 11.0474L3.5981 11.7663ZM12 6C15.8291 6 19.1021 8.39172 20.4018 11.7663L22.2682 11.0474C20.681 6.92668 16.6835 4 12 4V6ZM20.4018 12.2337C19.1021 15.6083 15.8291 18 12 18V20C16.6835 20 20.681 17.0733 22.2682 12.9526L20.4018 12.2337ZM12 18C8.17084 18 4.89784 15.6083 3.5981 12.2337L1.73175 12.9526C3.31889 17.0733 7.31641 20 12 20V18ZM20.4018 11.7663C20.4597 11.9165 20.4597 12.0835 20.4018 12.2337L22.2682 12.9526C22.5043 12.3396 22.5043 11.6604 22.2682 11.0474L20.4018 11.7663ZM1.73175 11.0474C1.49567 11.6604 1.49567 12.3396 1.73175 12.9526L3.5981 12.2337C3.54022 12.0835 3.54022 11.9165 3.5981 11.7663L1.73175 11.0474Z" fill="currentColor"/>
+                                <circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </button>
+                        </div>
+
+                        <div class="form-group">
+                            <input type="email" id="regRecoveryEmail" class="form-input" placeholder=" " autocomplete="off">
+                            <label for="regRecoveryEmail" class="form-label">Correo Electrónico de Recuperación</label>
+                        </div>
+
+                        <div class="form-actions form-actions--start form-group--full">
+                            <button type="button" class="btn btn-primary" data-goto="loginCard">Registrar</button>
+                        </div>
+
+                    </form>
+                </div>
+
+                <div class="card" id="recoverEmail" hidden>
+                    <button type="button" class="card-back" data-goto="loginCard">
+                        <svg viewBox="0 0 24 24"  fill="none">
+                        <path d="M20 12H4M4 12L10 6M4 12L10 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg> 
+                        Anterior
+                        
+                    </button>
+
+                    <h2 class="card-title">Recupera tu Contraseña</h2>
+                    <p class="card-text">
+                        Enviaremos un mensaje a tu correo electrónico de recuperación
+                        ********111@ejemplo.com para que puedas restablecer tu contraseña
+                    </p>
+
+                    <div class="form-actions">
+                        <button type="button" class="btn btn-primary" data-goto="recoverCode">Enviar Código</button>
+                    </div>
+                </div>
+
+                <div class="card" id="recoverCode" hidden>
+                    <button type="button" class="card-back" data-goto="recoverEmail">
+                        <svg viewBox="0 0 24 24" fill="none">
+                        <path d="M20 12H4M4 12L10 6M4 12L10 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        Anterior
+                    </button>
+
+                    <h2 class="card-title">Verificación de Seguridad</h2>
+                    <p class="card-text">
+                        Ingresa el código que te enviamos y pulsa “Validar Código”
+                        para restablecer tu contraseña
+                    </p>
+
+                    <div class="form-fields--login">
+                        <div class="form-group">
+                            <input type="text" id="recoveryCode" class="form-input" placeholder=" " inputmode="numeric" autocomplete="one-time-code">
+                            <label for="recoveryCode" class="form-label">Código de Recuperación</label>
+                        </div>
+
+                        <p class="form-hint">Reenviar código en <span id="resendTimer">2:00</span></p>
+
+                        <div class="form-actions">
+                            <button type="button" class="btn btn-primary" data-goto="recoverNew">Validar código</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card" id="recoverNew" hidden>
+                    <button type="button" class="card-back" data-goto="recoverCode">
+                        <svg viewBox="0 0 24 24" fill="none">
+                        <path d="M20 12H4M4 12L10 6M4 12L10 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        Anterior
+                    </button>
+
+                    <h2 class="card-title">Crea tu nueva contraseña</h2>
+                    <p class="card-text">
+                        Ingresa tu nueva contraseña, confirma y pulsa
+                        finalizar para volver al inicio de sesión
+                    </p>
+
+                    <div class="form-fields--login">
+                        <div class="form-group">
+                            
+                            <input type="password" id="newPassword" class="form-input form-input--icon" placeholder=" " autocomplete="new-password">
+                            <label for="newPassword" class="form-label">Nueva Contraseña</label>
+                            
+                            <button type="button" class="input-toggle" aria-label="Mostrar contraseña">
+                                
+                                <svg class="icon-eye-off" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M4 4L20 20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M6.22308 5.63732C4.19212 6.89322 2.60069 8.79137 1.73175 11.0474C1.49567 11.6604 1.49567 12.3396 1.73175 12.9526C3.31889 17.0733 7.31641 20 12 20C14.422 20 16.6606 19.2173 18.4773 17.8915L17.042 16.4562C15.6033 17.4309 13.8678 18 12 18C8.17084 18 4.89784 15.6083 3.5981 12.2337C3.54022 12.0835 3.54022 11.9165 3.5981 11.7663C4.36731 9.76914 5.82766 8.11625 7.6854 7.09964L6.22308 5.63732ZM9.47955 8.89379C8.5768 9.6272 7.99997 10.7462 7.99997 12C7.99997 14.2091 9.79083 16 12 16C13.2537 16 14.3728 15.4232 15.1062 14.5204L13.6766 13.0908C13.3197 13.6382 12.7021 14 12 14C10.8954 14 9.99997 13.1046 9.99997 12C9.99997 11.2979 10.3618 10.6802 10.9091 10.3234L9.47955 8.89379ZM15.9627 12.5485L11.4515 8.03729C11.6308 8.0127 11.8139 8 12 8C14.2091 8 16 9.79086 16 12C16 12.1861 15.9873 12.3692 15.9627 12.5485ZM18.5678 15.1536C19.3538 14.3151 19.9812 13.3259 20.4018 12.2337C20.4597 12.0835 20.4597 11.9165 20.4018 11.7663C19.1021 8.39172 15.8291 6 12 6C11.2082 6 10.4402 6.10226 9.70851 6.29433L8.11855 4.70437C9.32541 4.24913 10.6335 4 12 4C16.6835 4 20.681 6.92668 22.2682 11.0474C22.5043 11.6604 22.5043 12.3396 22.2682 12.9526C21.7464 14.3074 20.964 15.5331 19.9824 16.5682L18.5678 15.1536Z" fill="currentColor"/>
+                                </svg>
+
+                                <svg class="icon-eye" viewBox="0 0 24 24" fill="none">
+                                <path d="M21.335 11.4069L22.2682 11.0474L21.335 11.4069ZM21.335 12.5932L20.4018 12.2337L21.335 12.5932ZM2.66492 11.4068L1.73175 11.0474L2.66492 11.4068ZM2.66492 12.5932L1.73175 12.9526L2.66492 12.5932ZM3.5981 11.7663C4.89784 8.39171 8.17084 6 12 6V4C7.31641 4 3.31889 6.92667 1.73175 11.0474L3.5981 11.7663ZM12 6C15.8291 6 19.1021 8.39172 20.4018 11.7663L22.2682 11.0474C20.681 6.92668 16.6835 4 12 4V6ZM20.4018 12.2337C19.1021 15.6083 15.8291 18 12 18V20C16.6835 20 20.681 17.0733 22.2682 12.9526L20.4018 12.2337ZM12 18C8.17084 18 4.89784 15.6083 3.5981 12.2337L1.73175 12.9526C3.31889 17.0733 7.31641 20 12 20V18ZM20.4018 11.7663C20.4597 11.9165 20.4597 12.0835 20.4018 12.2337L22.2682 12.9526C22.5043 12.3396 22.5043 11.6604 22.2682 11.0474L20.4018 11.7663ZM1.73175 11.0474C1.49567 11.6604 1.49567 12.3396 1.73175 12.9526L3.5981 12.2337C3.54022 12.0835 3.54022 11.9165 3.5981 11.7663L1.73175 11.0474Z" fill="currentColor"/>
+                                <circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                                
+                            </button>
+                        </div> 
+                        <div class="form-group">
+                            <input type="password" id="cNewPassword" class="form-input form-input--icon" placeholder=" " autocomplete="new-password">
+                            <label for="cNewPassword" class="form-label">Repetir Nueva Contraseña</label>
+
+                            <button type="button" class="input-toggle" aria-label="Mostrar contraseña">
+                                
+                                <svg class="icon-eye-off" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M4 4L20 20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M6.22308 5.63732C4.19212 6.89322 2.60069 8.79137 1.73175 11.0474C1.49567 11.6604 1.49567 12.3396 1.73175 12.9526C3.31889 17.0733 7.31641 20 12 20C14.422 20 16.6606 19.2173 18.4773 17.8915L17.042 16.4562C15.6033 17.4309 13.8678 18 12 18C8.17084 18 4.89784 15.6083 3.5981 12.2337C3.54022 12.0835 3.54022 11.9165 3.5981 11.7663C4.36731 9.76914 5.82766 8.11625 7.6854 7.09964L6.22308 5.63732ZM9.47955 8.89379C8.5768 9.6272 7.99997 10.7462 7.99997 12C7.99997 14.2091 9.79083 16 12 16C13.2537 16 14.3728 15.4232 15.1062 14.5204L13.6766 13.0908C13.3197 13.6382 12.7021 14 12 14C10.8954 14 9.99997 13.1046 9.99997 12C9.99997 11.2979 10.3618 10.6802 10.9091 10.3234L9.47955 8.89379ZM15.9627 12.5485L11.4515 8.03729C11.6308 8.0127 11.8139 8 12 8C14.2091 8 16 9.79086 16 12C16 12.1861 15.9873 12.3692 15.9627 12.5485ZM18.5678 15.1536C19.3538 14.3151 19.9812 13.3259 20.4018 12.2337C20.4597 12.0835 20.4597 11.9165 20.4018 11.7663C19.1021 8.39172 15.8291 6 12 6C11.2082 6 10.4402 6.10226 9.70851 6.29433L8.11855 4.70437C9.32541 4.24913 10.6335 4 12 4C16.6835 4 20.681 6.92668 22.2682 11.0474C22.5043 11.6604 22.5043 12.3396 22.2682 12.9526C21.7464 14.3074 20.964 15.5331 19.9824 16.5682L18.5678 15.1536Z" fill="currentColor"/>
+                                </svg>
+
+                                <svg class="icon-eye" viewBox="0 0 24 24" fill="none">
+                                <path d="M21.335 11.4069L22.2682 11.0474L21.335 11.4069ZM21.335 12.5932L20.4018 12.2337L21.335 12.5932ZM2.66492 11.4068L1.73175 11.0474L2.66492 11.4068ZM2.66492 12.5932L1.73175 12.9526L2.66492 12.5932ZM3.5981 11.7663C4.89784 8.39171 8.17084 6 12 6V4C7.31641 4 3.31889 6.92667 1.73175 11.0474L3.5981 11.7663ZM12 6C15.8291 6 19.1021 8.39172 20.4018 11.7663L22.2682 11.0474C20.681 6.92668 16.6835 4 12 4V6ZM20.4018 12.2337C19.1021 15.6083 15.8291 18 12 18V20C16.6835 20 20.681 17.0733 22.2682 12.9526L20.4018 12.2337ZM12 18C8.17084 18 4.89784 15.6083 3.5981 12.2337L1.73175 12.9526C3.31889 17.0733 7.31641 20 12 20V18ZM20.4018 11.7663C20.4597 11.9165 20.4597 12.0835 20.4018 12.2337L22.2682 12.9526C22.5043 12.3396 22.5043 11.6604 22.2682 11.0474L20.4018 11.7663ZM1.73175 11.0474C1.49567 11.6604 1.49567 12.3396 1.73175 12.9526L3.5981 12.2337C3.54022 12.0835 3.54022 11.9165 3.5981 11.7663L1.73175 11.0474Z" fill="currentColor"/>
+                                <circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                                
+                            </button>
+
+                        </div>
+                        
+                        
+                        <div class="form-hint form-hint--left">
+                            <p>Tu contraseña debe contener:</p>
+                            <ul>
+                                
+                                <li>Al menos 8 caracteres</li>
+                                <li>Al menos una letra mayúscula</li>
+                                <li>Al menos un número</li>
+                                <li>Al menos un carácter especial (!, @, #, ...)</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="form-actions">
+                            <button type="button" class="btn btn-primary" data-goto="loginCard">Finalizar</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <footer class="page-footer">
+                    <img src="./Components/SVG de proyecto/Screenshot 2026-09-22 173452.png" alt="Sistema de Tipificación de Casos">
+                </footer>   
+
+        </section>
+
+        <section class="main-layout" id="mainScreen" aria-label="Pantalla principal" hidden>
+            <aside class="sidebar">
+                <div>
+                    <div class="sidebar-header">
+                        <h2 class="sidebar-title">Sistema de Tipificación de Casos</h2>
+                        <button type="button" class="sidebar-toggle-btn" aria-label="Contraer menú">
+                            <svg viewBox="0 0 24 24" fill="none">
+                                <path d="M10 4H6C4.89543 4 4 4.89543 4 6V18C4 19.1046 4.89543 20 6 20H10M10 4H18C19.1046 4 20 4.89543 20 6V18C20 19.1046 19.1046 20 18 20H10M10 4V20" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </button>
+                    </div>
+
+                    <nav class="sidebar-nav">
+                        <button type="button" class="active" data-view="casos" data-title="Gestión de Casos">
+                            <svg viewBox="0 0 24 24" fill="none">
+                            <path d="M3 19V18C3 15.7909 4.79086 14 7 14H11C13.2091 14 15 15.7909 15 18V19M15 11C16.6569 11 18 9.65685 18 8C18 6.34315 16.6569 5 15 5M21 19V18C21 15.7909 19.2091 14 17 14H16.5M12 8C12 9.65685 10.6569 11 9 11C7.34315 11 6 9.65685 6 8C6 6.34315 7.34315 5 9 5C10.6569 5 12 6.34315 12 8Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            <span class="nav-text">Gestión de Casos</span>
+                        </button>
+                        <button type="button" data-view="visitas" data-title="Gestión de Visitas">
+                            <svg viewBox="0 0 24 24" fill="none" >
+                            <path d="M20 10V7C20 5.89543 19.1046 5 18 5H6C4.89543 5 4 5.89543 4 7V10M20 10V19C20 20.1046 19.1046 21 18 21H6C4.89543 21 4 20.1046 4 19V10M20 10H4M8 3V7M16 3V7" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                            <span class="nav-text">Gestión de Visitas</span>
+                        </button>
+                        <button type="button" data-view="admin" data-title="Administración">
+                            <svg viewBox="0 0 24 24" fill="none" >
+                            <path d="M20.3499 8.92293L19.9837 8.7192C19.9269 8.68756 19.8989 8.67169 19.8714 8.65524C19.5983 8.49165 19.3682 8.26564 19.2002 7.99523C19.1833 7.96802 19.1674 7.93949 19.1348 7.8831C19.1023 7.82677 19.0858 7.79823 19.0706 7.76998C18.92 7.48866 18.8385 7.17515 18.8336 6.85606C18.8331 6.82398 18.8332 6.79121 18.8343 6.72604L18.8415 6.30078C18.8529 5.62025 18.8587 5.27894 18.763 4.97262C18.6781 4.70053 18.536 4.44993 18.3462 4.23725C18.1317 3.99685 17.8347 3.82534 17.2402 3.48276L16.7464 3.1982C16.1536 2.85658 15.8571 2.68571 15.5423 2.62057C15.2639 2.56294 14.9765 2.56561 14.6991 2.62789C14.3859 2.69819 14.0931 2.87351 13.5079 3.22396L13.5045 3.22555L13.1507 3.43741C13.0948 3.47091 13.0665 3.48779 13.0384 3.50338C12.7601 3.6581 12.4495 3.74365 12.1312 3.75387C12.0992 3.7549 12.0665 3.7549 12.0013 3.7549C11.9365 3.7549 11.9024 3.7549 11.8704 3.75387C11.5515 3.74361 11.2402 3.65759 10.9615 3.50224C10.9334 3.48658 10.9056 3.46956 10.8496 3.4359L10.4935 3.22213C9.90422 2.86836 9.60915 2.69121 9.29427 2.62057C9.0157 2.55807 8.72737 2.55634 8.44791 2.61471C8.13236 2.68062 7.83577 2.85276 7.24258 3.19703L7.23994 3.1982L6.75228 3.48124L6.74688 3.48454C6.15904 3.82572 5.86441 3.99672 5.6517 4.23614C5.46294 4.4486 5.32185 4.69881 5.2374 4.97018C5.14194 5.27691 5.14703 5.61896 5.15853 6.3027L5.16568 6.72736C5.16676 6.79166 5.16864 6.82362 5.16817 6.85525C5.16343 7.17499 5.08086 7.48914 4.92974 7.77096C4.9148 7.79883 4.8987 7.8267 4.86654 7.88237C4.83436 7.93809 4.81877 7.96579 4.80209 7.99268C4.63336 8.26452 4.40214 8.49186 4.12733 8.65572C4.10015 8.67193 4.0715 8.68752 4.01521 8.71871L3.65365 8.91908C3.05208 9.25245 2.75137 9.41928 2.53256 9.65669C2.33898 9.86672 2.19275 10.1158 2.10349 10.3872C2.00259 10.6939 2.00267 11.0378 2.00424 11.7255L2.00551 12.2877C2.00706 12.9708 2.00919 13.3122 2.11032 13.6168C2.19979 13.8863 2.34495 14.134 2.53744 14.3427C2.75502 14.5787 3.05274 14.7445 3.64974 15.0766L4.00808 15.276C4.06907 15.3099 4.09976 15.3266 4.12917 15.3444C4.40148 15.5083 4.63089 15.735 4.79818 16.0053C4.81625 16.0345 4.8336 16.0648 4.8683 16.1255C4.90256 16.1853 4.92009 16.2152 4.93594 16.2452C5.08261 16.5229 5.16114 16.8315 5.16649 17.1455C5.16707 17.1794 5.16658 17.2137 5.16541 17.2827L5.15853 17.6902C5.14695 18.3763 5.1419 18.7197 5.23792 19.0273C5.32287 19.2994 5.46484 19.55 5.65463 19.7627C5.86915 20.0031 6.16655 20.1745 6.76107 20.5171L7.25478 20.8015C7.84763 21.1432 8.14395 21.3138 8.45869 21.379C8.73714 21.4366 9.02464 21.4344 9.30209 21.3721C9.61567 21.3017 9.90948 21.1258 10.4964 20.7743L10.8502 20.5625C10.9062 20.5289 10.9346 20.5121 10.9626 20.4965C11.2409 20.3418 11.5512 20.2558 11.8695 20.2456C11.9015 20.2446 11.9342 20.2446 11.9994 20.2446C12.0648 20.2446 12.0974 20.2446 12.1295 20.2456C12.4484 20.2559 12.7607 20.3422 13.0394 20.4975C13.0639 20.5112 13.0885 20.526 13.1316 20.5519L13.5078 20.7777C14.0971 21.1315 14.3916 21.3081 14.7065 21.3788C14.985 21.4413 15.2736 21.4438 15.5531 21.3855C15.8685 21.3196 16.1657 21.1471 16.7586 20.803L17.2536 20.5157C17.8418 20.1743 18.1367 20.0031 18.3495 19.7636C18.5383 19.5512 18.6796 19.3011 18.764 19.0297C18.8588 18.7252 18.8531 18.3858 18.8417 17.7119L18.8343 17.2724C18.8332 17.2081 18.8331 17.1761 18.8336 17.1445C18.8383 16.8247 18.9195 16.5104 19.0706 16.2286C19.0856 16.2007 19.1018 16.1726 19.1338 16.1171C19.166 16.0615 19.1827 16.0337 19.1994 16.0068C19.3681 15.7349 19.5995 15.5074 19.8744 15.3435C19.9012 15.3275 19.9289 15.3122 19.9838 15.2818L19.9857 15.2809L20.3472 15.0805C20.9488 14.7472 21.2501 14.5801 21.4689 14.3427C21.6625 14.1327 21.8085 13.8839 21.8978 13.6126C21.9981 13.3077 21.9973 12.9658 21.9958 12.2861L21.9945 11.7119C21.9929 11.0287 21.9921 10.6874 21.891 10.3828C21.8015 10.1133 21.6555 9.86561 21.463 9.65685C21.2457 9.42111 20.9475 9.25526 20.3517 8.92378L20.3499 8.92293Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M8.00033 12C8.00033 14.2091 9.79119 16 12.0003 16C14.2095 16 16.0003 14.2091 16.0003 12C16.0003 9.79082 14.2095 7.99996 12.0003 7.99996C9.79119 7.99996 8.00033 9.79082 8.00033 12Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            <span class="nav-text">Administración</span>
+                        </button>
+                        <button type="button" data-action="logout">
+                            <svg viewBox="0 0 24 24" fill="none"><g id="SVGRepo_bgCarrier" stroke-width="2"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="m17 16 4-4-4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path><path d="M21 12H7M11 21H5.4A2.4 2.4 0 0 1 3 18.6V5.4A2.4 2.4 0 0 1 5.4 3H11" stroke="currentColor" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round"></path></g></svg>
+                            <span class="nav-text">Cerrar Sesión</span>
+                        </button>
+                    </nav>
+                </div>
+
+                <div class="sidebar-footer">
+                    <div class="user-avatar">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path fill-rule="evenodd" clip-rule="evenodd" d="M22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12ZM15 9C15 10.6569 13.6569 12 12 12C10.3431 12 9 10.6569 9 9C9 7.34315 10.3431 6 12 6C13.6569 6 15 7.34315 15 9ZM12 20.5C13.784 20.5 15.4397 19.9504 16.8069 19.0112C17.4108 18.5964 17.6688 17.8062 17.3178 17.1632C16.59 15.8303 15.0902 15 11.9999 15C8.90969 15 7.40997 15.8302 6.68214 17.1632C6.33105 17.8062 6.5891 18.5963 7.19296 19.0111C8.56018 19.9503 10.2159 20.5 12 20.5Z" fill="#343A40"></path> </g></svg>
+                        </svg>
+                    </div>
+                    <div class="user-info">
+                        <span class="user-name">Jhon Gutierrez</span>
+                        <span class="user-role">Administrador</span>
+                    </div>
+                </div>
+            </aside>
+
+            <div class="main-content-wrapper">
+                <header class="topbar">
+                    <img src="./Components/SVG de proyecto/Screenshot 2026-09-22 173452.png" alt="Sistema de Tipificación de Casos">
+                    <h1 class="topbar-title">Gestión de Casos</h1>
+                </header>
+
+                <main class="content-area">
+
+                    <div class="toolbar">
+
+                        <div class="input-icon-wrapper toolbar-search" role="search">
+                            <input id="search1" type="search" class="form-input" placeholder="Buscar cliente" aria-label="Buscar cliente">
+                            <svg viewBox="0 0 24 24" fill="none" >
+                            <circle cx="10" cy="10" r="6" stroke=#6c757d stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M14.5 14.5L19 19" stroke=#6c757d stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+
+                        <button type="button" class="btn btn-primary">
+                            <svg viewBox="0 0 20 20" fill="none">
+                            <path fill="#F8F9FA" fill-rule="evenodd" d="M9 17a1 1 0 102 0v-6h6a1 1 0 100-2h-6V3a1 1 0 10-2 0v6H3a1 1 0 000 2h6v6z"/>
+                            </svg>
+                            Nuevo Cliente
+                        </button>
+                
+                    </div>
+
+                    <div class="card card-full">
+                        <div class="data-table-container">
+                            <table class="data-table">
+                                <thead>
+                                    <tr>
+                                        <th colspan="8" class="data-table-title">Clientes Encontrados</th>
+                                    </tr>
+                                    <tr>
+                                        <th scope="col">Id Cliente</th>
+                                        <th scope="col">Nombres</th>
+                                        <th scope="col">Apellidos</th>
+                                        <th scope="col">Número de Identidad</th>
+                                        <th scope="col">Número de Teléfono</th>
+                                        <th scope="col">Correo Electrónico</th>
+                                        <th scope="col">Ciudad</th>
+                                        <th scope="col">País</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>C-123456</td>
+                                        <td>Alexander</td>
+                                        <td>Guevara</td>
+                                        <td>1000598736</td>
+                                        <td>321 958 9531</td>
+                                        <td>correo@ejemplo.com</td>
+                                        <td>Bogotá</td>
+                                        <td>Colombia</td>
+                                    </tr>
+                                    <tr>
+                                        <td>C-123457</td>
+                                        <td>Angie</td>
+                                        <td>Cardona</td>
+                                        <td>78954632</td>
+                                        <td>321 958 9531</td>
+                                        <td>correo1@ejemplo.com</td>
+                                        <td>Medellín</td>
+                                        <td>Colombia</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="card card-wide">
+                        <h2 class="card-title">Información de cliente</h2>
+
+                        <form id="clientForm" class="form-grid form-grid--client">
+
+                            <div class="form-group form-group--required">
+                                <input type="text" id="cliNombres" class="form-input" placeholder=" " required>
+                                <label for="cliNombres" class="form-label">Nombres</label>
+                            </div>
+
+                            <div class="form-group form-group--required">
+                                <input type="text" id="cliDocumento" class="form-input" placeholder=" " required>
+                                <label for="cliDocumento" class="form-label">Número de Documento de Identidad</label>
+                            </div>
+
+                            <div class="form-group form-group--required">
+                                <input type="text" id="cliApellidos" class="form-input" placeholder=" " required>
+                                <label for="cliApellidos" class="form-label">Apellidos</label>
+                            </div>
+
+                            <div class="form-group form-group--required">
+                                <input type="email" id="cliCorreo" class="form-input" placeholder=" " required>
+                                <label for="cliCorreo" class="form-label">Correo electrónico</label>
+                            </div>
+
+                            <div class="form-group form-group--required">
+                                <input type="tel" id="cliCelular" class="form-input" placeholder=" " required>
+                                <label for="cliCelular" class="form-label">Número de Celular</label>
+                            </div>
+
+                            <div class="form-group">
+                                <input type="text" id="cliDireccion" class="form-input" placeholder=" ">
+                                <label for="cliDireccion" class="form-label">Dirección de Residencia</label>
+                            </div>
+
+                            <div class="form-group">
+                                <input type="tel" id="cliTelefono" class="form-input" placeholder=" ">
+                                <label for="cliTelefono" class="form-label">Número de Teléfono</label>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <input type="text" id="cliCiudad" class="form-input form-input--icon" placeholder=" " autocomplete="off">
+                                    <label for="cliCiudad" class="form-label">Ciudad</label>
+                                    <svg class="input-icon" viewBox="0 0 24 24" fill="none" >
+                                    <circle cx="10" cy="10" r="6" stroke=#6c757d stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M14.5 14.5L19 19" stroke=#6c757d stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" id="cliPais" class="form-input form-input--icon" placeholder=" " autocomplete="off">
+                                    <label for="cliPais" class="form-label">País</label>
+                                    <svg class="input-icon" viewBox="0 0 24 24" fill="none" >
+                                    <circle cx="10" cy="10" r="6" stroke=#6c757d stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M14.5 14.5L19 19" stroke=#6c757d stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </div>
+                            </div>
+
+                            <div class="form-group form-group--full">
+                                <select id="cliHabeas" class="form-select" required>
+                                    <option value="" hidden></option>
+                                    <option value="si">Acepto</option>
+                                    <option value="no">No acepto</option>
+                                </select>
+                                <label for="cliHabeas" class="form-label">Habeas Data</label>
+                                <svg class="input-icon" viewBox="0 0 24 24" fill="none">
+                                <path d="M19 9L12.7071 15.2929C12.3166 15.6834 11.6834 15.6834 11.2929 15.2929L5 9" stroke="#6c757d" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </div>
+
+                            <div class="form-legal form-group--full">
+                                <p>De conformidad con la Ley de Protección de Datos Personales, autorizo de manera previa, expresa e informada a NIDOTECH para que recolecte, almacene, use, circule, suprima y procese los datos personales aquí suministrados. Esta información será utilizada para la creación de mi perfil como cliente, la ejecución de la relación comercial, la facturación, el soporte técnico y el envío de comunicaciones administrativas o comerciales.
+                                    Como titular de los datos, conozco que tengo derecho a conocer, actualizar, rectificar y solicitar la supresión de mis datos personales en cualquier momento, a través del correo electrónico contacto.nidotechcolombia@gmail.com.</p>
+                                <p>Como titular de los datos, conozco que tengo derecho a ...</p>
+                            </div>
+
+                            <div class="form-group--full">
+                                <label class="form-check form-check--top">
+                                    <input type="checkbox" id="cliAutoDatos" checked>
+                                    <span>Autorizo el tratamiento de mis datos personales para la gestión de la relación comercial y contractual, de acuerdo con la Política de Tratamiento de Datos de la empresa.</span>
+                                </label>
+                                <label class="form-check form-check--top">
+                                    <input type="checkbox" id="cliAutoComercial" checked>
+                                    <span>Autorizo el envío de ofertas comerciales, promociones, eventos y publicidad a través de mi correo electrónico y/o mensajes de texto (SMS/WhatsApp).</span>
+                                </label>
+                            </div>
+
+                            <div class="form-actions form-actions--between form-group--full">
+                                <div class="btn-group">
+                                    <button type="submit" class="btn btn-primary">
+                                        <svg viewBox="0 0 24 24" fill="none">
+                                        <path d="M4 12.5L9.5 18L20 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                        Confirmar
+                                    </button>
+                                    <button type="button" class="btn btn-secondary">
+                                        <svg viewBox="0 0 24 24" fill="none">
+                                        <path d="M4 6C4 4.89543 4.89543 4 6 4H12H14.1716C14.702 4 15.2107 4.21071 15.5858 4.58579L19.4142 8.41421C19.7893 8.78929 20 9.29799 20 9.82843V12V18C20 19.1046 19.1046 20 18 20H6C4.89543 20 4 19.1046 4 18V6Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M8 4H13V7C13 7.55228 12.5523 8 12 8H9C8.44772 8 8 7.55228 8 7V4Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M7 15C7 13.8954 7.89543 13 9 13H15C16.1046 13 17 13.8954 17 15V20H7V15Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                        Guardar
+                                    </button>
+                                    <button type="button" class="btn btn-secondary">
+                                        <svg viewBox="0 0 24 24" fill="none">
+                                        <path d="M12 3.99997H6C4.89543 3.99997 4 4.8954 4 5.99997V18C4 19.1045 4.89543 20 6 20H18C19.1046 20 20 19.1045 20 18V12M18.4142 8.41417L19.5 7.32842C20.281 6.54737 20.281 5.28104 19.5 4.5C18.7189 3.71895 17.4526 3.71895 16.6715 4.50001L15.5858 5.58575M18.4142 8.41417L12.3779 14.4505C12.0987 14.7297 11.7431 14.9201 11.356 14.9975L8.41422 15.5858L9.00257 12.6441C9.08001 12.2569 9.27032 11.9013 9.54951 11.6221L15.5858 5.58575M18.4142 8.41417L15.5858 5.58575" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                        Editar</button>
+                                    <button type="button" class="btn btn-secondary">
+                                        <svg viewBox="0 0 24 24" fill="none">
+                                        <path d="M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                        Salir</button>
+                                </div>
+
+                                <div class="form-inline">
+                                    <label for="cliId">Id cliente</label>
+                                    <input type="text" id="cliId" class="form-input form-input--inline" readonly>
+                                </div>
+                            </div>
+
+                        </form>
+                    </div>
+
+                    <div class="toolbar">
+
+                        <button type="button" class="btn btn-primary">
+                            <svg viewBox="0 0 20 20" fill="none">
+                            <path fill="#F8F9FA" fill-rule="evenodd" d="M9 17a1 1 0 102 0v-6h6a1 1 0 100-2h-6V3a1 1 0 10-2 0v6H3a1 1 0 000 2h6v6z"/>
+                            </svg>
+                            Nuevo Caso
+                        </button>
+                
+                    </div>
+
+                    <div class="card card-full">
+                        <div class="data-table-container">
+                            <table class="data-table">
+                                <thead>
+                                    <tr>
+                                        <th colspan="6" class="data-table-title">Historial Casos y Servicios</th>
+                                    </tr>
+                                    <tr>
+                                        <th scope="col">Fecha Creación</th>
+                                        <th scope="col">Fecha Modificación</th>
+                                        <th scope="col">Radicado</th>
+                                        <th scope="col">Modelo</th>
+                                        <th scope="col">Número de Serie</th>
+                                        <th scope="col">Notas</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr> 
+                                        <td colspan="6">No hay casos para mostrar</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="card card-full">
+                        <h2 class="card-title">Tipificación de Caso</h2>
+
+                        <form id="caseForm" class="form-grid form-grid--tip">
+
+                            <div class="form-group">
+                                <select id="tipTipo" class="form-select" required>
+                                    <option value="" hidden></option>
+                                    <option value="1">Opción</option>
+                                </select>
+                                <label for="tipTipo" class="form-label">Tipo</label>
+                                <svg class="input-icon" viewBox="0 0 24 24" fill="none">
+                                <path d="M19 9L12.7071 15.2929C12.3166 15.6834 11.6834 15.6834 11.2929 15.2929L5 9" stroke="#6c757d" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </div>
+
+                            <div class="form-group">
+                                <input type="text" id="tipModelo" class="form-input form-input--icon" placeholder=" " autocomplete="off">
+                                <label for="tipModelo" class="form-label">Modelo</label>
+                                <svg class="input-icon" viewBox="0 0 24 24" fill="none" >
+                                <circle cx="10" cy="10" r="6" stroke=#6c757d stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M14.5 14.5L19 19" stroke=#6c757d stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </div>
+
+                            <div class="form-group">
+                                <input type="text" id="tipSerie" class="form-input" placeholder=" ">
+                                <label for="tipSerie" class="form-label">Serie</label>
+                            </div>
+
+                            <div class="form-group">
+                                <input type="text" id="tipFecha" class="form-input form-input--icon" placeholder=" " autocomplete="off">
+                                <label for="tipFecha" class="form-label">Fecha de Compra</label>
+                                <button type="button" class="input-toggle" aria-label="Elegir fecha">
+                                    <svg viewBox="0 0 24 24" fill="none">
+                                    <path d="M20 10V7C20 5.89543 19.1046 5 18 5H6C4.89543 5 4 5.89543 4 7V10M20 10V19C20 20.1046 19.1046 21 18 21H6C4.89543 21 4 20.1046 4 19V10M20 10H4M8 3V7M16 3V7" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                                    </svg>
+                                </button>
+                            </div>
+
+                            <div class="form-group col-2">
+                                <input type="text" id="tipTienda" class="form-input" placeholder=" ">
+                                <label for="tipTienda" class="form-label">Tienda de Compra</label>
+                            </div>
+
+                            <div class="form-stack col-left">
+                                <div class="form-group">
+                                    <select id="tipRazon" class="form-select" required>
+                                        <option value="" hidden></option>
+                                    </select>
+                                    <label for="tipRazon" class="form-label">Razón</label>
+                                    <svg class="input-icon" viewBox="0 0 24 24" fill="none">
+                                    <path d="M19 9L12.7071 15.2929C12.3166 15.6834 11.6834 15.6834 11.2929 15.2929L5 9" stroke="#6c757d" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </div>
+                                <div class="form-group">
+                                    <select id="tipSubrazon" class="form-select" required>
+                                        <option value="" hidden></option>
+                                    </select>
+                                    <label for="tipSubrazon" class="form-label">Subrazón</label>
+                                    <svg class="input-icon" viewBox="0 0 24 24" fill="none">
+                                    <path d="M19 9L12.7071 15.2929C12.3166 15.6834 11.6834 15.6834 11.2929 15.2929L5 9" stroke="#6c757d" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </div>
+                                <div class="form-group">
+                                    <select id="tipResolucion" class="form-select" required>
+                                        <option value="" hidden></option>
+                                    </select>
+                                    <label for="tipResolucion" class="form-label">Resolución</label>
+                                    <svg class="input-icon" viewBox="0 0 24 24" fill="none">
+                                    <path d="M19 9L12.7071 15.2929C12.3166 15.6834 11.6834 15.6834 11.2929 15.2929L5 9" stroke="#6c757d" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </div>
+                                <div class="form-group">
+                                    <select id="tipEstado" class="form-select" required>
+                                        <option value="" hidden></option>
+                                    </select>
+                                    <label for="tipEstado" class="form-label">Estado</label>
+                                    <svg class="input-icon" viewBox="0 0 24 24" fill="none">
+                                    <path d="M19 9L12.7071 15.2929C12.3166 15.6834 11.6834 15.6834 11.2929 15.2929L5 9" stroke="#6c757d" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </div>
+                            </div>
+
+                            <div class="form-stack col-right">
+                                <div class="form-field">
+                                    <label for="tipNotas" class="form-title">Notas</label>
+                                    <textarea id="tipNotas" class="form-input form-textarea"></textarea>
+                                </div>
+
+                                <div class="form-field">
+                                    <span class="form-title" id="filesTitle">Archivos Adjuntos</span>
+                                    <div class="file-list-container" aria-labelledby="filesTitle">
+                                        <a href="#" class="file-link">Archivo 1</a>
+                                        <a href="#" class="file-link">Archivo 2</a>
+                                        <a href="#" class="file-link">Archivo 3</a>
+                                        <button type="button" class="file-add-trigger" aria-label="Adjuntar archivo">
+                                            <svg viewBox="0 0 24 24" fill="none"><!-- clip --></svg>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-actions form-actions--between form-group--full">
+                                <div class="form-actions form-actions--between form-group--full">
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-primary">
+                                        <svg viewBox="0 0 24 24" fill="none">
+                                        <path d="M4 6C4 4.89543 4.89543 4 6 4H12H14.1716C14.702 4 15.2107 4.21071 15.5858 4.58579L19.4142 8.41421C19.7893 8.78929 20 9.29799 20 9.82843V12V18C20 19.1046 19.1046 20 18 20H6C4.89543 20 4 19.1046 4 18V6Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M8 4H13V7C13 7.55228 12.5523 8 12 8H9C8.44772 8 8 7.55228 8 7V4Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M7 15C7 13.8954 7.89543 13 9 13H15C16.1046 13 17 13.8954 17 15V20H7V15Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                        Guardar
+                                    </button>
+                                    <button type="button" class="btn btn-secondary">
+                                        <svg viewBox="0 0 24 24" fill="none">
+                                        <path d="M12 3.99997H6C4.89543 3.99997 4 4.8954 4 5.99997V18C4 19.1045 4.89543 20 6 20H18C19.1046 20 20 19.1045 20 18V12M18.4142 8.41417L19.5 7.32842C20.281 6.54737 20.281 5.28104 19.5 4.5C18.7189 3.71895 17.4526 3.71895 16.6715 4.50001L15.5858 5.58575M18.4142 8.41417L12.3779 14.4505C12.0987 14.7297 11.7431 14.9201 11.356 14.9975L8.41422 15.5858L9.00257 12.6441C9.08001 12.2569 9.27032 11.9013 9.54951 11.6221L15.5858 5.58575M18.4142 8.41417L15.5858 5.58575" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                        Editar</button>
+                                    <button type="button" class="btn btn-secondary">
+                                        <svg viewBox="0 0 24 24" fill="none">
+                                        <path d="M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                        Salir</button>
+                                </div>
+                            </div>
+
+                        </form>
+                    </div>
+
+
+                </main>
+
+            </div>
+
+            
+            
+        </section>
+
+
+
+    </div>
+
+<script src="./main.js" defer></script>
+    
+</body>
+</html>

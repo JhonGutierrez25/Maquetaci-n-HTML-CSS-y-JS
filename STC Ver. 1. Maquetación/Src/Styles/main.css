@@ -1,0 +1,1195 @@
+/* las siguientes notas corresponderán a cada uno de los estilos para mantener la documentación*/
+
+/* BLOQUE 1 Estilos Globales y Reseteo*/
+
+/* Reseteo Global. Eliminación de margenes y rellenos predeterminados. Modelo de caja y tiopografía para todo el main.css */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'inter', sans-serif;
+}
+
+/* fondo global del sistema y color de letra principal*/
+body {
+    background-color: #F8F9FA;
+    color: #212529;
+}
+
+[hidden] {
+    display: none !important;
+}
+
+.app-shell {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Enlaces de texto del sistema (Olvidaste tu contraseña, Crea una cuenta) */
+.link {
+    color: #212529;
+    text-decoration: underline;
+}
+
+.link:hover {
+    color: #343A40;
+}
+
+/* BLOQUE 2 Contenedores de disposición global*/
+
+/* contenedor de autenticación (ocupa la pantalla), centra el contenido*/
+.auth-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    width: 100%;
+    padding: 24px;   /* respiro para que la card no toque los bordes */
+}
+
+.auth-page {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.auth-container {
+    flex: 1;
+}
+
+
+/* BLOQUE 3 Estructura de contenido principal*/
+
+
+/*Estructura contenido principal. Coloca los dos bloques principales uno al lado del otro: la Sidebar 
+y el wrapper (envoltorio) del contenido principal*/
+.main-layout {
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+}
+
+
+/*Contenedor de contenido principal (verticalmente, todo lo que está al lado de 
+la barra lateral)*/
+.main-content-wrapper {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+/*Área de Contenido de las Vistas*/
+.content-area {
+    flex: 1;
+    background-color: #F8F9FA;
+    padding: 32px;
+    overflow-y: auto;
+}
+
+/*Barra de acciones al inicio de cada vista*/
+.toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 24px;
+    min-width: 270px;
+}
+
+.toolbar-search {
+    max-width: 500px;
+}
+
+.toolbar .btn {
+    margin-left: auto;
+    height: 40px;
+}
+
+
+/* BLOQUE 4 Barra Superior y estilo de color y fondo compartido con barra lateral*/
+
+/*estánmdares de fondo y color de letra principal en los estilos indicados*/
+.sidebar, .topbar {
+    background-color: #FFFFFF;
+    color: #343A40;    
+}
+
+/*Barra superior*/
+.topbar {
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 13px 32px;
+    border-bottom: 1px solid #343a4033;
+}
+
+.topbar-title {
+    min-width: 0;               /* permite que se encoja por debajo del ancho de su texto */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    /* ...el resto (position, padding-left, font-size...) igual */
+}
+
+/*Imagen logo STC barra superior*/
+.topbar img{
+    height: 100%;
+    max-height: 54px;
+    margin-right: 16px;
+    object-fit: contain;
+    flex-shrink: 0;
+}
+
+/* BLOQUE 5 Barra lateral y Variante colapsada*/
+
+/*Estructura base de la barra lateral*/
+.sidebar {
+    width: 252px;
+    display: flex;
+    flex-direction: column;
+    padding: 24px;
+    border-right: 1px solid #343a4033;
+    justify-content: space-between;
+    transition: width 0.3s ease;
+}
+
+/*Dimensión Barra Lateral Contraída*/
+.sidebar.collapsed {
+    width: 84px;
+    align-items: center;
+}
+
+/*Ocultamiento de elementos cuando se contrae la barra lateral*/
+.sidebar.collapsed .sidebar-title,
+.sidebar.collapsed .nav-text,
+.sidebar.collapsed .sidebar-footer{
+    display: none;
+}
+
+/*Cabecera de barra lateral (incluye titulo y botón colapsar)*/
+.sidebar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 32px;
+}
+
+/*Título barra lateral*/
+.sidebar-title{
+    font-size: 16px;
+    color: #343A40;  
+    text-align: left;
+    font-weight: 600;
+    line-height: 1.2;
+    max-width: 170px;
+}
+
+/*Botón colapsar/contraer*/
+.sidebar-toggle-btn {
+    width: 20px;
+    height: 20px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    color: #343A40;
+    transition: background-color 0.2s ease;
+    border-radius: 4px;
+}
+
+/*Dimensionamiento del SVG ícono botón de contraer*/
+.sidebar-toggle-btn svg {
+    width: 20px;
+    height: 20px;
+    fill: none;
+    stroke: currentColor;
+}
+
+/*Efecto hover en botón de contraer (cambiar color del fondo)*/
+.sidebar-toggle-btn:hover {
+    background-color: #343a4033;
+}
+
+/*Animación para rotar el ícono botón de contraer*/
+.sidebar.collapsed .sidebar-toggle-btn svg {
+    transform: rotate(180deg);
+    transition: transform 0.3s ease;
+}
+
+/*Contenedor para botones de navegación*/
+.sidebar-nav {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0px;
+    overflow-y: auto;
+}
+
+
+/*Texto del área de navegación*/
+.nav-text {
+    white-space: nowrap;
+    opacity: 1;
+    transition: opacity 0.2s ease;
+}
+
+/*Boton opción de barra lateral*/
+.sidebar-nav button {
+    display: flex;
+    color: #212529;
+    width: 100%;
+    height: 44px;
+    padding: 12px 16px;
+    margin-bottom: 8px;
+    background: transparent;
+    border: none;
+    border-radius: 8px;
+    align-items: left;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+
+/*Dimensionamiento del SVG íconos botones de navegación*/
+.sidebar-nav button svg {
+    width: 20px;
+    height: 20px;
+    margin-right: 12px;                
+    fill: none;    
+    stroke: currentColor;                 
+}
+
+/*Efecto hover para botones de opciones navegación y resaltado de texto*/
+.sidebar-nav button:hover {
+    color: #343A40;                    
+    background-color: #343a4033; 
+    transition: none;
+}
+
+.sidebar.collapsed .sidebar-nav button svg:hover {
+    background-color: #343a4033;
+    border-radius: 4px;
+}
+
+.sidebar.collapsed .sidebar-nav button:hover {
+    color: #343A40;                    
+    background-color: transparent; 
+    transition: none;
+}
+
+
+/*Pie de barra lateral (usuario activo)*/
+.sidebar-footer {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding-top: 16px;
+    border-top: 1px solid #343a4033;
+}
+
+
+
+/*Nombre y rol*/
+.user-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    min-width: 0;
+}
+
+.user-name {
+    font-size: 12px;
+    font-weight: 700;
+    color: #212529;
+}
+
+.user-role {
+    font-size: 10px;
+    color: #343A40;
+}
+
+/*Avatar circular del usuario*/
+.user-avatar {
+    flex-shrink: 0;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background-color: #212529;
+    color: #ffffff;
+    object-fit: cover;
+}
+
+.user-avatar svg {
+    width: 32px;
+    height: 32px;
+    fill: none;
+    stroke: currentColor;
+}
+
+
+
+/*Ajuste botones en barra contraida para adaptar contenido en el espacio*/
+.sidebar.collapsed .sidebar-nav button {
+    justify-content: center;
+    padding: 0;
+}
+
+/*Elimina margen del ícono al contraer barra*/
+.sidebar.collapsed .sidebar-nav button svg {
+    margin-right: 0;
+}
+
+/* BLOQUE 6 Contenedores de tarjetas*/
+
+/*Tarjeta contenedora base*/
+.card {
+    background: white;
+    padding: 24px;
+    border-radius: 20px;
+    border: 1px solid #343a4033;
+    width: 100%;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/*Modificador de tamaño de tarjeta para modulo registro*/
+.card-register {
+    max-width: 1076px;
+}
+
+/*Modificador de tamaño de tarjeta para modulo registro*/
+.card-wide {
+    max-width: 1124px;
+    margin-bottom: 24px;
+    min-width: 270px;
+}
+
+.card-full {
+    max-width: none;
+    margin-bottom: 24px;
+    min-width: 270px;
+}
+
+/*Títulos de tarjetas*/
+
+.card-title {
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 24px;
+}
+
+
+/*Texto de Tarjetas bajo el título*/
+.card-text {
+    text-align: center;
+    margin-bottom: 24px;
+    font-weight: 400;
+}
+
+/* Botón "Anterior" en la esquina superior de la tarjeta */
+.card-back {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 0;
+    font-size: 16px;
+    color: #212529;
+    background: none;
+    border: 0;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+.card-back svg {
+    width: 16px;
+    height: 16px;
+}
+
+.card-back:hover {
+    color: #343A40;
+    text-decoration: underline;
+}
+
+.card-footer {
+    margin-top: 48px;
+    text-align: center;
+    font-size: 14px;
+    color: #212529;
+}
+
+.page-footer {
+    padding: 0 24px 24px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+
+.page-footer img {
+    height: 50px;
+    width: auto;
+    object-fit: contain;
+    display: block;
+}
+
+
+
+
+/*BLOQUE 7 Formularios y Validaciones*/
+
+/*Contenedor estructural de formularios ()*/
+.form-group {
+    position: relative;
+    width: 100%;
+    margin-bottom: 12px;
+    padding-top: 20px;
+}
+
+.form-group--center{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Contenedor de ancho fijo para campos, opciones y botón del login*/
+.form-fields--login {
+    max-width: 348px;
+    margin: 0 auto;
+}
+
+/* Fila de opciones: casilla redordarme a la izquierda, enlace olvidé contraseña a la derecha */
+.form-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: -4px;   /* quita parte del margin-bottom (12px) del grupo para que quede más cerca al input */
+    font-size: 14px;
+    color: #212529;
+}
+
+/* Texto de ayuda bajo un campo (ej. contador de reenvío) */
+.form-hint {
+    margin-top: -4px;       /* compensa parte del margin-bottom (12px) del grupo */
+    font-size: 14px;
+    text-align: center;
+    color: #212529;
+}
+
+.form-hint--left{
+    text-align: left;
+}
+
+.form-hint ul {
+    margin-top: 10px;
+    text-align: left;
+    padding-left: 20px;
+}
+
+/* Casilla con su texto */
+.form-check {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+}
+
+.form-check input {
+    width: 18px;
+    height: 18px;
+    margin: 0;
+    accent-color: #212529;
+}
+
+/* Estilo base para cajas de texto y desplegables*/
+.form-input,
+.form-select {
+    width: 100%;
+    height: 40px;
+    padding: 9px 16px;
+    font-size: 16px;
+    color: #212529;
+    background-color: #F8F9FA;
+    border: 1px solid #343a4033;
+    border-radius: 8px;
+    outline: none;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    text-align: left;
+}
+
+.form-select {
+    appearance: none;
+    -webkit-appearance: none;
+    padding-right: 44px;
+    cursor: pointer;
+}
+
+/* Ocultamiento del texto placeholder por defecto para dar paso al 
+efecto de etiqueta flotante */
+.form-input::placeholder {
+    color: transparent;
+}
+
+/*Estilo inicial etiqueta flotante*/
+.form-label {
+    position: absolute;
+    transform: translateY(-50%);
+    top: 40px;
+    left: 16px;
+    font-size: 16px;
+    line-height: 1;
+    color: #6c757d;
+    pointer-events: none;
+    transition: all 0.2s ease;   
+    white-space: nowrap;
+    max-width: calc(100% - 32px);
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.form-group:has(.input-icon) .form-label,
+.form-group:has(.input-toggle) .form-label {
+    max-width: calc(100% - 64px);
+}
+
+/*Efecto de elevación de label*/
+
+.form-input:focus + .form-label,
+.form-input:not(:placeholder-shown) + .form-label,
+.form-select:focus + .form-label,
+.form-select:valid + .form-label {
+    top: 10px;
+    font-size: 12px;
+    color: #343A40;
+    font-weight: 600;
+}
+
+/*Etiqueta de error sincronizada*/
+.form-input.error + .form-label {
+    color: #212529;
+}
+
+/*Mensaje de alertapara control de errores 
+(Texto en negrita, color de acento)*/
+.error-message {
+    font-size: 14px;
+    font-weight: 700;
+    color: #212529;
+    text-align: center;
+    margin-bottom: 12px;
+}
+
+/* Área de texto para (Notas)*/
+.form-textarea {
+    height: auto;
+    min-height: 80px;
+    padding: 12px 16px;
+    resize: vertical;
+}
+
+
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 16px;
+    row-gap: 8px;
+}
+
+.form-grid .form-group {
+    margin-bottom: 0;
+}
+
+.form-group--full {
+    grid-column: 1 / -1;
+}
+
+/* Registro: más aire entre columnas y margen lateral como en el prototipo */
+.form-grid--register {
+    column-gap: 50px;
+    padding: 0 32px;
+}
+
+
+/* Cuadrícula del formulario de cliente: dos columnas de 348px, centradas */
+.form-grid--client {
+    grid-template-columns: repeat(2, minmax (0, 1fr));
+    justify-content: center;
+    column-gap: 48px;
+}
+
+.form-grid--client > * {
+    min-width: 0;
+}
+
+/* Fila interna para dos campos compartiendo una columna (Ciudad y País) */
+.form-row {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 16px;
+}
+
+.form-row .form-group {
+    margin-bottom: 0;
+}
+
+/* Asterisco de campo obligatorio, sobre la esquina del input */
+.form-group--required::after {
+    content: "*";
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 14px;
+    font-weight: 700;
+    color: #212529;
+}
+
+/* Texto legal */
+.form-legal {
+    font-size: 12px;
+    line-height: 1.4;
+    color: #212529;
+}
+
+.form-legal p + p {
+    margin-top: 4px;
+}
+
+/* Casilla con texto largo: la casilla se alinea con la primera línea */
+.form-check--top {
+    align-items: flex-start;
+    font-size: 12px;
+    margin-bottom: 8px;
+}
+
+.form-check--top input {
+    flex-shrink: 0;
+}
+
+/* Contenedor para centrar botones de formulario */
+.form-actions {
+    display: flex;
+    justify-content: center;
+    margin-top: 32px;
+}
+
+
+/* Barra inferior: botones a la izquierda, Id cliente a la derecha */
+.form-actions--between {
+    justify-content: space-between;
+    align-items: left;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.form-inline {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 14px;
+    flex-wrap: wrap;
+}
+
+.form-input--inline {
+    width: 165px;
+    width: 190px;
+    max-width: 100%;
+}
+
+@media (max-width: 860px) {
+        .form-grid--client {
+    grid-template-columns: minmax(0, 1fr);
+    column-gap: 0;
+    }
+}
+
+
+.form-grid--tip {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    max-width: 1400px;
+    margin-inline: auto;
+    column-gap: 16px;
+}
+
+.form-grid--tip > * {
+    min-width: 0;
+}
+
+.col-2     { grid-column: span 2; }
+.col-left  { grid-column: 1 / span 2; }
+.col-right { grid-column: 3 / -1; }
+
+/*Pila vertical de campos dentro de una columna*/
+.form-stack {
+    display: grid;
+    row-gap: 8px;
+    align-content: start;
+}
+
+/*Título fijo sobre un campo (Notas, Archivos Adjuntos), sin efecto flotante*/
+.form-title {
+    display: block;
+    margin-bottom: 4px;
+    font-size: 12px;
+    font-weight: 600;
+    color: #343A40;
+}
+
+.form-textarea {
+    min-height: 120px;
+}
+
+.form-inline-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+@media (max-width: 860px) {
+    .form-grid--tip {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .col-2,
+    .col-left,
+    .col-right {
+        grid-column: 1 / -1;
+    }
+}
+
+
+
+
+/*BLOQUE 8: Varianteas de Ingreso*/
+
+.input-icon {
+    position: absolute;
+    top: 40px;                 /* padding-top del grupo (20) + mitad del input (20) */
+    right: 12px;
+    transform: translateY(-50%);
+    width: 18px;
+    height: 18px;
+    fill: none;
+    stroke: #6c757d;
+    pointer-events: none;      /* el clic pasa al input */
+}
+
+/* Input con botón/ícono a la derecha (compatible con label flotante) */
+.form-input--icon {
+    padding-right: 44px;
+}
+
+/* Botón del ojo, centrado sobre el input.
+   top = padding-top del grupo (20px) + mitad del input (20px) */
+.input-toggle {
+    position: absolute;
+    top: 40px;
+    right: 12px;
+    transform: translateY(-50%);
+    display: flex;
+    padding: 4px;
+    border: 0;
+    background: none;
+    color: #6c757d;
+    cursor: pointer;
+}
+
+.input-toggle svg {
+    width: 20px;
+    height: 20px;
+}
+
+/* Por defecto: ojo tachado (contraseña oculta) */
+.input-toggle .icon-eye { display: none; }
+
+/* Con la clase is-visible: ojo abierto */
+.input-toggle.is-visible .icon-eye { display: block; }
+.input-toggle.is-visible .icon-eye-off { display: none; }
+
+
+.input-toggle:hover {
+    color: #212529;
+}
+
+/* Contenedor relativo para inputs con elementos superpuestos*/
+.input-icon-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+/* Posicionamiento y diseño del ícono interno*/
+.input-icon-wrapper svg {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 18px;
+    height: 18px;
+    fill: none;
+    stroke: #6c757d;
+    pointer-events: none;
+}
+
+/* Ajuste de relleno derecho en inputs con ícono*/
+.input-icon-wrapper .form-input {
+    padding-right: 36px;
+    display: block;
+}
+
+/* Contenedor flotante de autocompletado*/
+.autocomplete-dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #ffffff;
+    border: 1px solid #343a4033;
+    border-radius: 4px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    z-index: 10;
+    max-height: 150px;
+    overflow-y: auto;
+    margin-top: 4px;
+}
+
+/* Elemento individual del autocompletado*/
+.autocomplete-item {
+    padding: 10px 16px;
+    font-size: 14px;
+    color: #212529;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+/* Efecto hover del ítem de búsqueda*/
+.autocomplete-item:hover {
+    background-color: #F8F9FA;
+}
+
+/* Variante de campo de solo lectura*/
+.form-input:read-only {
+    background-color: transparent;
+    color: #212529;
+    cursor: default;
+    border-color: #343a4033;
+}
+
+/* Quitar efectos de foco en campos estáticos*/
+.form-input:read-only:focus {
+    border-color: #343a4033;
+    box-shadow: none;
+}
+
+
+/*Especializado para el botón ayuda*/
+
+.input-help {
+    position: absolute;
+    top: 40px;
+    left: calc(100% + 8px);
+    transform: translateY(-50%);
+    display: flex;
+    padding: 0;
+    border: 0;
+    background: none;
+    color: #6c757d;
+    cursor: help;
+}
+
+.input-help svg {
+    width: 20px;
+    height: 20px;
+    fill: none;
+    stroke: currentColor;
+}
+
+.input-help:hover {
+    color: #212529;
+}
+
+@media (max-width: 700px) {
+    .content-area { padding: 16px; }
+    .card { padding: 16px; }    
+
+    .form-row {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .form-grid,
+    .form-grid--register {
+        grid-template-columns: 1fr;
+        column-gap: 0;
+        padding: 0;
+    }
+    
+    .input-help {
+            left: auto;
+            right: 44px;          /* el ojo ocupa ~36px a la derecha */
+        }
+    
+    .form-group:has(.input-help) .form-input {
+        padding-right: 76px;
+    }
+
+}
+
+/*BLOQUE 9: Matrices de Datos y Tablas*/
+
+/*Contenedor principal de Tabla*/
+.data-table-container {
+    width: 100%;
+    overflow-x: auto;
+    border: 1px solid #343a4033;
+    border-radius: 8px;
+    background-color: #ffffff;
+}
+
+/*Estructura base de tabla*/
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+.data-table-title {
+    background-color: #343a404d;
+    text-align: center;
+    font-size: 14px;
+    border-right: 0;
+}
+
+/* Celdas de cabecera (th)*/
+.data-table th {
+    background-color: #343a4033;
+    color: #343A40;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 5px 16px;
+    border-bottom: 2px solid #343A40;
+    border-right: 1px solid #343a4033;
+}
+
+/*Celdas de datos*/
+.data-table td {
+    padding: 5px 16px;
+    font-size: 14px;
+    color: #212529;
+    border-bottom: 1px solid #343a4033;
+    border-right: 1px solid #343a4033;
+}
+
+/*Efecto Hover de las filas de tabla*/
+
+/*transición*/
+.data-table tbody tr {
+    transition: background-color 0.2s ease;
+}
+
+/*Hover*/
+.data-table tbody tr:hover {
+    background-color: #2125291a;
+}
+
+/*Botones de acción dentro de Tablas*/
+.btn-table-action {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    color: #343A40;
+    min-height: 44px;
+    min-width: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    transition: color 0.2s ease, background-color 0.2s ease;
+}
+
+/*Proporción y color de los SVG internos en los botones de la tabla*/
+.btn-table-action svg {
+    width: 20px;
+    height: 20px;
+    fill: currentColor;
+}
+
+/* Hover de las acciones de tabla*/
+.btn-table-action:hover {
+    color: #212529;
+    background-color: #343a401a;
+}
+
+/* BLOQUE 10: Gestión de Documentos y Pestañas de Subvistas*/
+
+/*Contenedor Lista de Archivos*/
+.file-list-container {
+    width: 100%;
+    border: 1px solid #343a4033;
+    border-radius: 4px;
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Enlace individual de archivo*/
+.file-link {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 28px;
+    padding: 0 16px;
+    font-size: 14px;
+    color: #212529;
+    text-decoration: none;
+    border-bottom: 1px solid #343a4033;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+/*Hover de enlace de archivo*/
+.file-link:hover {
+    background-color: #F8F9FA;
+    color: #343A40;
+    font-weight: 500;
+}
+
+/*Botón de explorar archivos para adjutnar*/
+.file-add-trigger {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    min-height: 28px;
+    padding: 0 16px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    color: #212529;
+    transition: background-color 0.2s ease;
+}
+
+/*dimension del SVG icono clip*/
+.file-add-trigger svg {
+    width: 20px;
+    height: 20px;
+    fill: currentColor;
+}
+
+/* Efecto hover del botón de adjuntar archivos*/
+.file-add-trigger:hover {
+    background-color: #343a401a;
+}
+
+/*Contenedor del menú de pestañas de las subvistas (Tabs)*/
+.admin-tabs-container {
+    display: flex;
+    width: 100%;
+    border-bottom: 1px solid #343a4033;
+    margin-bottom: 24px;
+}
+
+/*Botón pestaña subvista*/
+.admin-tab {
+    flex: 1;
+    padding: 12px 16px;
+    background-color: #ffffff;
+    color: #212529;
+    font-size: 14px;
+    font-weight: 500;
+    text-align: center;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.2s ease, font-weight 0.2s ease;
+}
+
+/*Efecto hover de las pestañas*/
+.admin-tab:hover {
+    background-color: #F8F9FA;
+}
+
+/*Estilo de pestaña en activo*/
+.admin-tab.active {
+    background-color: #d8d8d8;
+    font-weight: 600;
+    border-bottom: 2px solid #343A40;
+}
+
+/*Contenedor de fgráfico dinámico de reporte*/
+.chart-wrapper {
+    width: 100%;
+    min-height: 350px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #ffffff;
+    border-radius: 4px;
+}
+
+/*BLOQUE 11: Botones de Acción*/
+
+
+/* Estilo base compartido para todos los botones del sistema*/
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 44px;
+    padding: 0 20px;
+    font-size: 16px;
+    font-weight: 400;
+    font-family: 'inter', sans-serif;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    white-space: nowrap;
+    flex-shrink: 0;
+    text-decoration: none;
+    transition: background-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Alineación y tamaño de los íconos SVG dentro de los botones */
+.btn svg {
+    width: 26px;
+    height: 26px;
+    margin-right: 8px;
+    fill: none;
+    stroke: currentColor;
+}
+
+/*Botón Primario*/
+.btn-primary {
+    background-color: #212529;
+    color: #f8f9fa;
+}
+
+
+
+/*Hover Botón Primario*/
+.btn-primary:hover {
+    background-color: #343A40;
+}
+
+.form-actions--start {
+    justify-content: flex-start;
+}
+
+
+.btn-secondary {
+    background-color: #343A40;
+    color: #ffffff;
+}
+
+.btn-secondary:hover {
+    background-color: #212529;
+    box-shadow: 0 4px 8px #00000026;
+}
+
+.btn-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
